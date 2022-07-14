@@ -1,10 +1,10 @@
-FROM amazoncorretto:11-alpine
+FROM amazoncorretto:17-alpine
 
 # Add the flyway user and step in the directory
 RUN adduser -D -u 1000 jenkins
 
 WORKDIR /flyway
-ENV FLYWAY_VERSION 7.15.0
+ENV FLYWAY_VERSION 9.0.0
 
 RUN apk add --no-cache curl bash jq \
   && curl -L https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/${FLYWAY_VERSION}/flyway-commandline-${FLYWAY_VERSION}.tar.gz -o flyway-commandline-${FLYWAY_VERSION}.tar.gz \

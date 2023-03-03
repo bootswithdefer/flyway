@@ -4,7 +4,7 @@ FROM amazoncorretto:17-alpine
 RUN adduser -D -u 1000 jenkins
 
 WORKDIR /flyway
-ENV FLYWAY_VERSION 9.0.0
+ENV FLYWAY_VERSION 9.15.1
 
 RUN apk add --no-cache curl bash jq \
   && curl -L https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/${FLYWAY_VERSION}/flyway-commandline-${FLYWAY_VERSION}.tar.gz -o flyway-commandline-${FLYWAY_VERSION}.tar.gz \
